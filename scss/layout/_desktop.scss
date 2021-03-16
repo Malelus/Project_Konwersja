@@ -1,0 +1,71 @@
+//================================================================//
+//===// Incorporating required desktop layout scss variables //===//
+//================================================================//
+
+@use '../global' as *;
+@use '../components' as *;
+
+//==============================================//
+//===// Responsive layout - desktop layout //===//
+//==============================================//
+
+@include desktop {
+  //==================//
+  //===// Header //===//
+  //==================//
+
+  //===// Header > Logo //===//
+
+  .logo {
+    &__text {
+      font-size: 2rem;
+    }
+  }
+
+  //================//
+  //===// Main //===//
+  //================//
+
+  //===// Main > Table //===//
+
+  .photo_source {
+    font-size: 1.2rem;
+  }
+
+  .table {
+    &__img {
+      width: 400px;
+      font-size: 1rem;
+    }
+
+    &__ext,
+    &__size {
+      font-size: 1.2rem;
+      padding-left: 1rem;
+    }
+  }
+
+  //==================//
+  //===// Footer //===//
+  //==================//
+
+  //===// Footer > Content //===//
+
+  .footer {
+    &__text {
+      font-size: 1.3rem;
+    }
+  }
+
+  //==================//
+  //===// Assets //===//
+  //==================//
+
+  //===// Buttons //===//
+
+  .btn {
+    &--scrollUp {
+      font-size: 3rem;
+    }
+  }
+}

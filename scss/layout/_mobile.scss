@@ -1,0 +1,114 @@
+//===============================================================//
+//===// Incorporating required mobile layout scss variables //===//
+//===============================================================//
+
+@use '../global' as *;
+@use '../components' as *;
+
+//==============================================//
+//===// Responsive layout - mobile layout //===//
+//==============================================//
+
+@include mobile {
+  //==================//
+  //===// Header //===//
+  //==================//
+
+  //===// Header > Logo //===//
+
+  .logo {
+    &__text {
+      font-size: 1.7rem;
+    }
+  }
+
+  //================//
+  //===// Main //===//
+  //================//
+
+  //===// Main > Table //===//
+
+  .photo_source {
+    font-size: 1rem;
+  }
+
+  .table {
+    &__img {
+      width: 300px;
+      font-size: 0.8rem;
+    }
+
+    &__ext,
+    &__size {
+      font-size: 1rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  //==================//
+  //===// Footer //===//
+  //==================//
+
+  //===// Footer > Content //===//
+
+  .footer {
+    &__text {
+      font-size: 1.15rem;
+    }
+  }
+
+  //==================//
+  //===// Assets //===//
+  //==================//
+
+  //===// Buttons //===//
+
+  .btn {
+    &--outer {
+      font-size: 1rem;
+    }
+
+    &--inner {
+      font-size: 1.175rem;
+    }
+  }
+
+  //===// Popup //===//
+
+  .popup {
+    &__title {
+      font-size: 2.1rem;
+
+      &--icon {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+
+    &__text {
+      font-size: 1.35rem;
+
+      & + & {
+        margin-top: 0.5em;
+      }
+
+      &:last-of-type {
+        margin-bottom: 1.8rem;
+      }
+    }
+
+    &__link {
+      font-size: 1.175rem;
+      margin-left: 0.25em;
+    }
+
+    &__circle {
+      top: 55%;
+      font-size: 0.5rem;
+      transform: translateY(-55%);
+    }
+  }
+}

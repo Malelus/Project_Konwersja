@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: inline-block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+::before,
+::after {
+    -webkit-animation-delay: -1ms !important;
+            animation-delay: -1ms !important;
+    -webkit-animation-duration: 1ms !important;
+            animation-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+:root {
+  --transition-static: 0.35s;
+  --transition-time: 0.35s;
+  --btn-anim-time: 0.2s;
+  --popup-time: 0.4s;
+}
+
+.btn {
+  position: relative;
+  background: #d2d6d9;
+  border: none;
+  outline: none;
+  color: #012e40;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease;
+}
+.btn--outer {
+  font-size: 0.9rem;
+}
+.btn--inner {
+  background: #012e40;
+  color: #d2d6d9;
+  font-size: 1.175rem;
+}
+.btn--inner > .btn--icon {
+  background: #012e40;
+  color: #d2d6d9;
+}
+.btn--icon {
+  pointer-events: none;
+  font-family: "Font Awesome 5 Free";
+  box-shadow: none;
+  padding: 1px;
+}
+.btn--icon--rounded {
+  border-radius: 50%;
+}
+.btn--about {
+  font-weight: 400;
+  border-radius: 50px;
+  margin-top: 0.5rem;
+  padding: 0.5em 0.8em;
+}
+.btn--about:hover, .btn--about:focus {
+  opacity: 0.8;
+}
+.btn--about:hover .btn--info {
+  transform: scale(1.15, 1.15);
+}
+.btn--about:hover .btn--close {
+  transform: scale(1.15, 1.15) rotate(180deg);
+}
+.btn--info, .btn--close {
+  transition: transform 0.2s ease;
+  margin-right: 0.1em;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+.popup.popup--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.popup__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.popup__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  background: #d2d6d9;
+  border-radius: 6.5px;
+  padding: 3.5rem 2.2rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+.popup__title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.225rem;
+  margin-bottom: 0.85rem;
+}
+.popup__title--icon {
+  color: #012e40;
+  font-size: 1.6rem;
+}
+.popup__subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.2rem 0 0.8rem;
+}
+.popup__text {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+.popup__text + .popup__text {
+  margin-top: 0.4em;
+}
+.popup__text:last-of-type {
+  margin-bottom: 1.55rem;
+}
+.popup__link {
+  color: #012e40;
+  font-size: 1rem;
+  margin-left: 0.25em;
+  transition: opacity 0.2s ease;
+}
+.popup__link:hover, .popup__link:focus {
+  opacity: 0.8;
+}
+.popup__icon {
+  color: #012e40;
+}
+.popup__circle {
+  position: relative;
+  top: 65%;
+  font-size: 0.25rem;
+  transform: translateY(-65%);
+}
+
+.slide-r-l {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  z-index: 101;
+  background: #d2d6d9;
+  transition: 0.35s ease-out;
+}
+.slide-r-l.transition--active {
+  left: 0;
+}
+
+body {
+  background: #d2d6d9;
+  color: #012e40;
+  font-family: "Poppins", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 0.8rem;
+}
+body::-webkit-scrollbar-track {
+  background: #d2d6d9;
+  margin: 0.08rem 0;
+}
+body::-webkit-scrollbar-thumb {
+  background: #012e40;
+  border: 2.75px solid #d2d6d9;
+  border-radius: 10px;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+  padding: 1em 0;
+}
+
+.logo {
+  text-align: center;
+}
+.logo__text {
+  font-size: 1.35rem;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.link_container {
+  text-align: right;
+  margin-bottom: 3.25rem;
+}
+
+.photo_source {
+  display: inline-block;
+  color: #012e40;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  margin: 0 0.75em 0.25em 0;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table__img {
+  width: 200px;
+  font-size: 0.6rem;
+}
+.table__ext, .table__size {
+  color: #012e40;
+  font-size: 0.6rem;
+  padding-left: 0.1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  background: #012e40;
+  padding: 0.25em 1.5em 0.55em;
+}
+
+.footer__text {
+  color: #d2d6d9;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 43.75em) {
+  .logo__text {
+    font-size: 1.7rem;
+  }
+
+  .photo_source {
+    font-size: 1rem;
+  }
+
+  .table__img {
+    width: 300px;
+    font-size: 0.8rem;
+  }
+  .table__ext, .table__size {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .footer__text {
+    font-size: 1.15rem;
+  }
+
+  .btn--outer {
+    font-size: 1rem;
+  }
+  .btn--inner {
+    font-size: 1.175rem;
+  }
+
+  .popup__title {
+    font-size: 2.1rem;
+  }
+  .popup__title--icon {
+    font-size: 1.8rem;
+  }
+  .popup__subtitle {
+    font-size: 1.5rem;
+  }
+  .popup__text {
+    font-size: 1.35rem;
+  }
+  .popup__text + .popup__text {
+    margin-top: 0.5em;
+  }
+  .popup__text:last-of-type {
+    margin-bottom: 1.8rem;
+  }
+  .popup__link {
+    font-size: 1.175rem;
+    margin-left: 0.25em;
+  }
+  .popup__circle {
+    top: 55%;
+    font-size: 0.5rem;
+    transform: translateY(-55%);
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .logo__text {
+    font-size: 2rem;
+  }
+
+  .photo_source {
+    font-size: 1.2rem;
+  }
+
+  .table__img {
+    width: 400px;
+    font-size: 1rem;
+  }
+  .table__ext, .table__size {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+  }
+
+  .footer__text {
+    font-size: 1.3rem;
+  }
+
+  .btn--scrollUp {
+    font-size: 3rem;
+  }
+}/*# sourceMappingURL=main.css.map */

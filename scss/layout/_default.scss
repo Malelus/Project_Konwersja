@@ -1,0 +1,120 @@
+//================================================================//
+//===// Incorporating required default layout scss variables //===//
+//================================================================//
+
+@use '../global' as *;
+@use '../components' as *;
+
+//================//
+//===// Body //===//
+//================//
+
+body {
+  background: color(bg);
+  color: color(txt);
+  font-family: font(txt);
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: color(bg);
+    margin: 0.08rem 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color(accent);
+    border: 2.75px solid color(bg);
+    border-radius: 10px;
+  }
+}
+
+//==================//
+//===// Header //===//
+//==================//
+
+header {
+  position: relative;
+  z-index: 3;
+  padding: 1em 0;
+}
+
+//===// Header > Logo //===//
+
+.logo {
+  text-align: center;
+
+  &__text {
+    font-size: 1.35rem;
+  }
+}
+
+//================//
+//===// Main //===//
+//================//
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+//===// Main > Table //===//
+
+.link_container {
+  text-align: right;
+  margin-bottom: 3.25rem;
+}
+
+.photo_source {
+  display: inline-block;
+  color: color(txt);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  margin: 0 0.75em 0.25em 0;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 200px;
+    font-size: 0.6rem;
+  }
+
+  &__ext,
+  &__size {
+    color: color(txt);
+    font-size: 0.6rem;
+    padding-left: 0.1rem;
+  }
+}
+
+//==================//
+//===// Footer //===//
+//==================//
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  background: color(bg-accent);
+  padding: 0.25em 1.5em 0.55em;
+}
+
+//===// Footer > Content //===//
+
+.footer {
+  &__text {
+    color: color(bg);
+    font-family: font(txt);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
