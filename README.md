@@ -1,6 +1,6 @@
 # Strona o grafice komputerowej, zastosowaniu jej i różnic wynikających z użytego rozszerzenia pliku.
 
-> ### [Link do strony](https://malelus.github.io/Konwersja/)
+> ### [Link do strony](https://malelus.github.io/Project_Konwersja/)
 
 ---
 
